@@ -6,10 +6,41 @@
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css"/>
 
         <script src="./js/rental-app.js"></script>
+        <script src="./js/tambah-controller.js"></script>
     </head>
     <body ng-app="RentalApp" class="container">
         <div class="jumbotron">
             <h1>Tambah Data</h1>
         </div>
+
+        <div ng-controller="TambahController">
+        <form>
+            <div class="form-group row">
+				<label class="col-sm-2 col-form-label">ID</label>
+				<input type="text" class="col-sm-4 form-control"
+						placeholder="ID" ng-model="car.id" />
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">NOPOL</label>
+				<input type="text" class="col-sm-4 form-control" 
+                        placeholder="NOMOR POLISI" 
+                        ng-model="car.nopol" />
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">MERK-TIPE</label>
+				<input type="text" class="col-sm-4 form-control" 
+                        placeholder="MERK-TIPE" 
+                        ng-model="car.merkTipe" />
+			</div>
+			<div class="form-group row">
+				<button class="btn btn-primary col-pr-2" ng-click="simpan()">
+					Simpan
+				</button>
+				<button class="btn btn-warning col-sm-2" ng-click="batal()">
+					Batal
+				</button>
+			</div>
+        </form>        
+    </div>
     </body>
 </html>
