@@ -14,6 +14,10 @@ rentalApp.controller('DaftarController',
         function gagal(response) {};
     };
 
+    $scope.tambah = function() {
+        $window.location.href = "/tambah-ui";
+    }
+
     $scope.updateDaftar();
 
 });

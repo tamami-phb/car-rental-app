@@ -11,6 +11,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry reg) {
         reg.addViewController("/")        
                 .setViewName("daftar-kendaraan");
+        reg.addViewController("/tambah-ui")
+                .setViewName("tambah");
     }
 
 }
