@@ -13,6 +13,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 .setViewName("daftar-kendaraan");
         reg.addViewController("/tambah-ui")
                 .setViewName("tambah");
+        reg.addViewController("/edit-ui")
+                .setViewName("edit");
     }
 
 }

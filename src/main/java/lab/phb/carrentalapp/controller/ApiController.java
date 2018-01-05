@@ -3,6 +3,7 @@ package lab.phb.carrentalapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +21,10 @@ public class ApiController {
 
     @RequestMapping("/daftar-mobil")
     public List<Mobil> getDaftarMobil() {
+        List<Mobil> data = mobilRepo.findAll();
+        for(int i=0; i<data.size(); i++) {
+            System.out.println(((Mobil) data.get(i)).getNopol());
+        }
         return mobilRepo.findAll();
     }
 
@@ -29,6 +34,11 @@ public class ApiController {
         //System.out.println("nopol :  "+ mobil.getNopol());
         //System.out.println("merk-tipe : " + mobil.getMerkTipe());
         mobilRepo.save(mobil);
+    }
+
+    @RequestMapping(value = "/api/hapus/{id}", method = RequestMethod.DELETE)
+    public void hapusData(@PathVariable("id") int id) {
+        mobilRepo.delete(id);
     }
 
 }

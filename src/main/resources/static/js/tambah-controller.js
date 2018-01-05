@@ -10,7 +10,7 @@ rentalApp.controller('TambahController',
         };
 
         function gagal(response) {
-
+            console.log(response);
         };
     };
 

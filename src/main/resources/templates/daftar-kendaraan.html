@@ -25,6 +25,18 @@
                         <td>{{ mobil.id }}</td>
                         <td>{{ mobil.nopol }}</td>
                         <td>{{ mobil.merkTipe }}</td>
+                        <td>
+                            <button class="btn btn-warning"
+                                    ng-click="edit(mobil)">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"
+                                    ng-click="hapus(mobil)">
+                                Hapus
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
